@@ -81,6 +81,7 @@ int main() {
     while (j < size2) {
         result[k++] = *pb; 
         j++;
+        pb++;
     }
 
     // Вывод 
