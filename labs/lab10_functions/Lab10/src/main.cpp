@@ -85,7 +85,7 @@ int main()
 
     // ВЫВОД ИНФОРМАЦИИ О ПАМЯТИ
     size_t originalMemory = N * sizeof(int);
-    size_t compressedMemory = compressedSize * sizeof(Run);
+    size_t compressedMemory = compressedSize * sizeof(int);
 
 
     cout << "Память до сжатия: " << originalMemory << " байт\n";
