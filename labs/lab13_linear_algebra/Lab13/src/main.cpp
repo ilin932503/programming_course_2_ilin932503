@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Функция для вывода матрицы в поток (для отладки или записи в файл)
+// Функция для вывода матрицы 
 void PrintMatrix(ofstream& out, double** matrix, int m, int n) {
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
@@ -16,7 +16,7 @@ void PrintMatrix(ofstream& out, double** matrix, int m, int n) {
 }
 
 // Функция приведения матрицы к ступенчатому виду
-int GaussJordan(double** matrix, int m, int n, double epsilon = 1e-8) {
+int GaussJordan(double** matrix, int m, int n, double epsilon = 1e-9) {
     int lead = 0; // Ведущий столбец
 
     // Проходим по всем строкам
@@ -143,7 +143,7 @@ int main() {
 
     // Результат
     if (result == 1) {
-        outFile << "Result: UNIQUE solution exists." << endl;
+        outFile << "Результат: существует уникальное решение" << endl;
 
         double* solution = new double[n];
         for (int j = 0; j < n; j++) solution[j] = 0.0;
@@ -176,10 +176,10 @@ int main() {
         delete[] solution;
     }
     else if (result == 0) {
-        outFile << "Result: INCONSISTENT system (no solution)." << endl;
+        outFile << "Результат: нет решения" << endl;
     }
     else if (result == -1) {
-        outFile << "Result: INFINITE solutions (no unique solution)." << endl;
+        outFile << "Результат: БЕСКОНЕЧНОЕ количество решений." << endl;
     }
 
     outFile.close();
