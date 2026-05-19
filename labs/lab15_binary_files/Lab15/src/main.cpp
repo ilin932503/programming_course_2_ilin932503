@@ -79,12 +79,6 @@ void color_filter() {
         fwrite(row, sizeof(unsigned char), row_size, fout);
     }
 
-    // Копируем остаток файла
-    int c;
-    while ((c = fgetc(fin)) != EOF) {
-        fputc(c, fout);
-    }
-
     delete[] row;
     fclose(fin); fclose(fout);
     printf("Result saved to output.bmp\n");
